@@ -46,17 +46,17 @@ class PlayStoreScreen extends StatelessWidget {
                 AppCard(
                   appName: 'Clash of Clans',
                   rating: 3.7,
-                  image: 'assets/COC_LOGO.png',
+                  image: 'assets/images/COC_LOGO.png',
                 ),
                 AppCard(
                   appName: 'Clash Royale',
                   rating: 4.0,
-                  image: 'assets/CR_LOGO.png',
+                  image: 'assets/images/CR_LOGO.png',
                 ),
                 AppCard(
                   appName: 'Microsoft Lens',
                   rating: 4.9,
-                  image: 'assets/icon3.png',
+                  image: 'assets/images/icon3.png',
                 ),
               ],
             ),
@@ -76,17 +76,17 @@ class PlayStoreScreen extends StatelessWidget {
                 AppCard(
                   appName: 'Audible',
                   rating: 4.4,
-                  image: 'assets/icon4.png',
+                  image: 'assets/images/icon4.png',
                 ),
                 AppCard(
                   appName: 'TaxDown',
                   rating: 3.8,
-                  image: 'assets/icon5.png',
+                  image: 'assets/images/icon5.png',
                 ),
                 AppCard(
                   appName: 'Amazon Photos',
                   rating: 4.7,
-                  image: 'assets/icon6.png',
+                  image: 'assets/images/icon6.png',
                 ),
               ],
             ),
