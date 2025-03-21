@@ -43,9 +43,21 @@ class PlayStoreScreen extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                AppCard(appName: 'Clash of Clans', rating: 3.7, image: 'COC_LOGO.png'),
-                AppCard(appName: 'Clash Royale', rating: 4.0, image: 'CR_LOGO.png'),
-                AppCard(appName: 'Microsoft Lens', rating: 4.9, image: 'assets/icon3.png'),
+                AppCard(
+                  appName: 'Clash of Clans',
+                  rating: 3.7,
+                  image: 'assets/COC_LOGO.png',
+                ),
+                AppCard(
+                  appName: 'Clash Royale',
+                  rating: 4.0,
+                  image: 'assets/CR_LOGO.png',
+                ),
+                AppCard(
+                  appName: 'Microsoft Lens',
+                  rating: 4.9,
+                  image: 'assets/icon3.png',
+                ),
               ],
             ),
           ),
@@ -61,9 +73,21 @@ class PlayStoreScreen extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                AppCard(appName: 'Audible', rating: 4.4, image: 'assets/icon4.png'),
-                AppCard(appName: 'TaxDown', rating: 3.8, image: 'assets/icon5.png'),
-                AppCard(appName: 'Amazon Photos', rating: 4.7, image: 'assets/icon6.png'),
+                AppCard(
+                  appName: 'Audible',
+                  rating: 4.4,
+                  image: 'assets/icon4.png',
+                ),
+                AppCard(
+                  appName: 'TaxDown',
+                  rating: 3.8,
+                  image: 'assets/icon5.png',
+                ),
+                AppCard(
+                  appName: 'Amazon Photos',
+                  rating: 4.7,
+                  image: 'assets/icon6.png',
+                ),
               ],
             ),
           ),
