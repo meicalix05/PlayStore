@@ -38,6 +38,11 @@ class AppsScreen extends StatelessWidget {
                 rating: 4.9,
                 image: 'assets/images/TAXDOWN_LOGO.png',
               ),
+              AppCard(
+                appName: 'TaxDown',
+                rating: 4.9,
+                image: 'assets/images/TAXDOWN_LOGO.png',
+              ),
             ],
           ),
         ),
