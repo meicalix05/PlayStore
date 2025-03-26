@@ -68,6 +68,11 @@ class MoviesScreen extends StatelessWidget {
                 rating: 4.7,
                 image: 'assets/images/WINDTALKERS.webp',
               ),
+              AppCard(
+                appName: 'John Wick',
+                rating: 4.7,
+                image: 'assets/images/JOHNWICK.webp',
+              ),
             ],
           ),
         ),
