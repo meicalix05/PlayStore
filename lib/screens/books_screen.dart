@@ -37,8 +37,8 @@ class BooksScreen extends StatelessWidget {
               AppCard(
                 appName: 'To All the Boys Ive Loved Before',
                 rating: 5.0,
-                image: 'images/TATBILB.png',
-              ), 
+                image: 'assets/images/TATBILB.png',
+              ),
               AppCard(
                 appName: 'El Titanic',
                 rating: 4.9,
@@ -64,7 +64,6 @@ class BooksScreen extends StatelessWidget {
                 rating: 5.0,
                 image: 'assets/images/HarryPotteryelCalizdeF.webp',
               ),
-                      
             ],
           ),
         ),

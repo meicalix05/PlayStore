@@ -33,6 +33,21 @@ class GamesScreen extends StatelessWidget {
                 rating: 4.9,
                 image: 'assets/images/WILDRIFT_LOGO.png',
               ),
+              AppCard(
+                appName: 'Legends of Runeterra',
+                rating: 4.9,
+                image: 'assets/images/LOR_LOGO.png',
+              ),
+              AppCard(
+                appName: 'Mario Kart Tour',
+                rating: 4.9,
+                image: 'assets/images/MARIOKARTTOUR_LOGO.png',
+              ),
+              AppCard(
+                appName: 'Angry Birds 2',
+                rating: 4.9,
+                image: 'assets/images/ANGRYBIRDS2_LOGO.png',
+              ),
             ],
           ),
         ),
