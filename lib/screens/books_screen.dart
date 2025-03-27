@@ -37,34 +37,33 @@ class BooksScreen extends StatelessWidget {
               AppCard(
                 appName: 'To All the Boys Ive Loved Before',
                 rating: 5.0,
-                image: 'images/TATBILB.png',
-              ), 
+                image: 'assets/images/TATBILB.png',
+              ),
               AppCard(
                 appName: 'El Titanic',
                 rating: 4.9,
-                image: 'images/ElTitanic.webp',
+                image: 'assets/images/ElTitanic.webp',
               ),
               AppCard(
                 appName: 'Harry Potter y la Piedra Filosofal',
                 rating: 5.0,
-                image: 'images/HarryPotterPiedraF.webp',
+                image: 'assets/images/HarryPotterPiedraF.webp',
               ),
               AppCard(
                 appName: 'Harry Potter y la Camara Secreta',
                 rating: 5.0,
-                image: 'images/HarryPotterCamaraS.webp',
+                image: 'assets/images/HarryPotterCamaraS.webp',
               ),
               AppCard(
                 appName: 'Harry Potter y el Prisionero de Azkaban',
                 rating: 5.0,
-                image: 'images/HarryPotteryelprisionerodeAzkaban.webp',
+                image: 'assets/images/HarryPotteryelprisionerodeAzkaban.webp',
               ),
               AppCard(
                 appName: 'Harry Potter y el Caliz de Fuego',
                 rating: 5.0,
-                image: 'images/HarryPotteryelCalizdeF.webp',
+                image: 'assets/images/HarryPotteryelCalizdeF.webp',
               ),
-                      
             ],
           ),
         ),
