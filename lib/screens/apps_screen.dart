@@ -40,13 +40,28 @@ class AppsScreen extends StatelessWidget {
               ),
               AppCard(
                 appName: 'WhatsApp',
-                rating: 4.9,
+                rating: 4.8,
                 image: 'assets/images/Whatsapplogo.webp',
               ),
               AppCard(
                 appName: 'Waze',
-                rating: 4.9,
+                rating: 4.5,
                 image: 'assets/images/Waze.png',
+              ),
+              AppCard(
+                appName: 'Facebook',
+                rating: 4.5,
+                image: 'assets/images/facebooklogo.webp',
+              ),
+              AppCard(
+                appName: 'Linkedln',
+                rating: 4.5,
+                image: 'assets/images/Linkedln.png',
+              ),
+              AppCard(
+                appName: 'YouTube',
+                rating: 4.5,
+                image: 'assets/images/YT.webp',
               ),
             ],
           ),
