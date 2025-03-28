@@ -54,7 +54,7 @@ class MoviesScreen extends StatelessWidget {
           ),
         ),
         Container(
-          height: 150,
+          height: 170,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [

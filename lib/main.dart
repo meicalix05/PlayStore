@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: PlayStoreScreen(),
+      home: GooglePlayScreen(),
     );
   }
 }
 
-class PlayStoreScreen extends StatelessWidget {
+class GooglePlayScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
