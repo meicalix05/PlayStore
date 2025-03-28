@@ -73,6 +73,26 @@ class MoviesScreen extends StatelessWidget {
                 rating: 4.7,
                 image: 'assets/images/JOHNWICK.webp',
               ),
+              AppCard(
+                appName: 'Avengers: Infinity War',
+                rating: 4.7,
+                image: 'assets/images/infinitywar.webp',
+              ),
+              AppCard(
+                appName: 'Spider Man:\nInto the Spiderverse',
+                rating: 4.7,
+                image: 'assets/images/ITSV.jpg',
+              ),
+              AppCard(
+                appName: 'Spider Man:\nAcross the Spiderverse',
+                rating: 4.7,
+                image: 'assets/images/ATSV.jpg',
+              ),
+              AppCard(
+                appName: 'Captain America and\nThe Winter Soldier',
+                rating: 4.7,
+                image: 'assets/images/CATWS.jpg',
+              ),
             ],
           ),
         ),
