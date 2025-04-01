@@ -24,26 +24,77 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class GooglePlayScreen extends StatelessWidget {
+class GooglePlayScreen extends StatefulWidget {
+  @override
+  _GooglePlayScreenState createState() => _GooglePlayScreenState();
+}
+
+class _GooglePlayScreenState extends State<GooglePlayScreen> {
+  bool _isSearching = false;
+  TextEditingController _searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
         appBar: AppBar(
-          title: Row(
+          title: Stack(
+            alignment: Alignment.center,
             children: [
-              Image.asset(
-                'assets/images/GOOGLEPLAY_LOGO.png',
-                width: 30,
-                height: 30,
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/images/GOOGLEPLAY_LOGO.png',
+                    width: 30,
+                    height: 30,
+                  ),
+                  SizedBox(width: 8),
+                  Text('Google Play'),
+                ],
               ),
-              SizedBox(width: 8),
-              Text('Google Play'),
+              if (_isSearching)
+                Center(
+                  child: Container(
+                    width: 600,
+                    height: 40,
+                    child: TextField(
+                      controller: _searchController,
+                      decoration: InputDecoration(
+                        hintText: 'Buscar aplicaciones y juegos',
+                        hintStyle: TextStyle(color: Colors.grey),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: BorderSide(color: Colors.white70),
+                        ),
+                        contentPadding: EdgeInsets.symmetric(
+                          vertical: 0,
+                          horizontal: 12.0,
+                        ),
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(0.2),
+                      ),
+                      style: TextStyle(color: Colors.grey),
+                      autofocus: true,
+                    ),
+                  ),
+                ),
             ],
           ),
           actions: [
-            IconButton(icon: Icon(Icons.search), onPressed: () {}),
+            IconButton(
+              icon: Icon(_isSearching ? Icons.close : Icons.search),
+              onPressed: () {
+                setState(() {
+                  if (_isSearching) {
+                    _isSearching = false;
+                    _searchController.clear();
+                  } else {
+                    _isSearching = true;
+                  }
+                });
+              },
+            ),
             IconButton(icon: Icon(Icons.account_circle), onPressed: () {}),
           ],
           bottom: TabBar(
