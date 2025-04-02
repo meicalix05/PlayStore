@@ -41,6 +41,7 @@ class BooksScreen extends StatelessWidget {
                 appName: 'To All the Boys Ive Loved Before',
                 rating: 5.0,
                 image: 'assets/images/TATBILB.png',
+                height: 280,
               ),
               AppCard(
                 appName: 'El Titanic',

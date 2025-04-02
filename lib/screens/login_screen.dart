@@ -1,29 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:google_play_emulator/main.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
-
-}
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Pantalla Principal'),
-      ),
-      body: Center(
-        child: Text('Bienvenido a la pantalla principal'),
-      ),
-    );
-  }
 }
 
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
 
   void _login() {
     String username = _usernameController.text;
@@ -31,16 +16,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (username == 'admin' && password == '12345') {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login exitoso')),
+        SnackBar(content: Text('Se inició sesión correctamente.')),
       );
-      
+
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()), // Pantalla principal
+        MaterialPageRoute(builder: (context) => GooglePlayScreen()),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Usuario o contraseña incorrectos')),
+        SnackBar(content: Text('Usuario o contraseña incorrectos.')),
       );
     }
   }
@@ -48,29 +33,69 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(labelText: 'Usuario'),
-            ),
-            TextField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: InputDecoration(labelText: 'Contraseña'),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _login,
-              child: Text('Iniciar sesión'),
-            ),
-          ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.asset(
+                'assets/images/GOOGLEPLAYLOGO_LOGIN.png',
+                width: 150,
+                height: 150,
+              ),
+              SizedBox(height: 32.0),
+              Container(
+                width: 250,
+                child: TextField(
+                  controller: _usernameController,
+                  decoration: InputDecoration(
+                    labelText: 'Usuario',
+                    labelStyle: TextStyle(fontSize: 12),
+                    border: OutlineInputBorder(),
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 20.0,
+                    ),
+                  ),
+                  style: TextStyle(fontSize: 14),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              Container(
+                width: 250,
+                child: TextField(
+                  controller: _passwordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Contraseña',
+                    labelStyle: TextStyle(fontSize: 12),
+                    border: OutlineInputBorder(),
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 20.0,
+                    ),
+                  ),
+                  style: TextStyle(fontSize: 14),
+                ),
+              ),
+              SizedBox(height: 24.0),
+              ElevatedButton(
+                onPressed: _login,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 32.0,
+                    vertical: 18.0,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                child: Text('Iniciar sesión'),
+              ),
+            ],
+          ),
         ),
       ),
     );

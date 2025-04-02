@@ -4,6 +4,7 @@ import 'screens/games_screen.dart';
 import 'screens/movies_screen.dart';
 import 'screens/books_screen.dart';
 import 'screens/kids_screen.dart';
+import 'screens/login_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: GooglePlayScreen(),
+      home: LoginScreen(),
     );
   }
 }
@@ -56,7 +57,7 @@ class _GooglePlayScreenState extends State<GooglePlayScreen> {
               if (_isSearching)
                 Center(
                   child: Container(
-                    width: 600,
+                    width: 400,
                     height: 40,
                     child: TextField(
                       controller: _searchController,
@@ -95,7 +96,24 @@ class _GooglePlayScreenState extends State<GooglePlayScreen> {
                 });
               },
             ),
-            IconButton(icon: Icon(Icons.account_circle), onPressed: () {}),
+            PopupMenuButton<String>(
+              icon: Icon(Icons.account_circle),
+              onSelected: (String value) {
+                if (value == 'logout') {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
+                }
+              },
+              itemBuilder:
+                  (BuildContext context) => <PopupMenuEntry<String>>[
+                    PopupMenuItem<String>(
+                      value: 'logout',
+                      child: Text('Cerrar sesión'),
+                    ),
+                  ],
+            ),
           ],
           bottom: TabBar(
             tabs: [
