@@ -226,6 +226,111 @@ class GamesScreen extends StatelessWidget {
                             'assets/images/games_content/ANGRYBIRDS2_LOGO.png',
                       ),
                     ),
+                     GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Subway Surfers',
+                              description: 'Corre y esquiva trenes en este emocionante juego.',
+                              image: 'images/games_content/Subway_Surfers.WEBP',
+                              rating: 4.6,
+                              downloads: '1B+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Subway Surfers',
+                        rating: 4.6,
+                        image: 'images/games_content/Subway_Surfers.WEBP',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Temple Run 2',
+                              description: 'Corre por tu vida en este juego de aventuras.',
+                              image: 'images/games_content/Temple_Run2.png',
+                              rating: 4.5,
+                              downloads: '500M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Temple Run 2',
+                        rating: 4.5,
+                        image: 'images/games_content/Temple_Run2.png',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Fruit Ninja',
+                              description: 'Corta frutas y evita bombas en este juego clásico.',
+                              image: 'images/games_content/Fruit_ninja.png',
+                              rating: 4.4,
+                              downloads: '100M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Fruit Ninja',
+                        rating: 4.4,
+                        image: 'images/games_content/Fruit_ninja.png',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Hill Climb Racing',
+                              description: 'Conduce por colinas y supera obstáculos.',
+                              image: 'images/games_content/Hill_climb_racing.png',
+                              rating: 4.3,
+                              downloads: '500M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Hill Climb Racing',
+                        rating: 4.3,
+                        image: 'images/games_content/Hill_climb_racing.png',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Plants vs Zombies',
+                              description: 'Defiende tu jardín de los zombis con plantas.',
+                              image: 'images/games_content/PlantsvsZombies.webp',
+                              rating: 4.7,
+                              downloads: '100M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Plants vs Zombies',
+                        rating: 4.7,
+                        image: 'images/games_content/PlantsvsZombies.webp',
+                      ),
+                    ),
                   ],
                 ),
               ),
