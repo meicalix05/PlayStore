@@ -3,13 +3,14 @@ import '/widgets/app_card.dart';
 import 'app_details_screen.dart';
 
 class GamesScreen extends StatelessWidget {
-  final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController1 = ScrollController();
+  final ScrollController _scrollController2 = ScrollController();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return ListView(
       children: [
+        // Primera sección
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
@@ -22,8 +23,8 @@ class GamesScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.arrow_back),
               onPressed: () {
-                _scrollController.animateTo(
-                  _scrollController.offset - 200,
+                _scrollController1.animateTo(
+                  _scrollController1.offset - 200,
                   duration: Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
                 );
@@ -34,7 +35,7 @@ class GamesScreen extends StatelessWidget {
                 height: 170,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  controller: _scrollController,
+                  controller: _scrollController1,
                   children: [
                     GestureDetector(
                       onTap: () {
@@ -131,6 +132,50 @@ class GamesScreen extends StatelessWidget {
                         image: 'assets/images/games_content/LOR_LOGO.png',
                       ),
                     ),
+                  ],
+                ),
+              ),
+            ),
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () {
+                _scrollController1.animateTo(
+                  _scrollController1.offset + 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+          ],
+        ),
+
+        // Segunda sección
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Juegos casuales',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Row(
+          children: [
+            IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                _scrollController2.animateTo(
+                  _scrollController2.offset - 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            Expanded(
+              child: Container(
+                height: 170,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  controller: _scrollController2,
+                  children: [
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -188,8 +233,8 @@ class GamesScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.arrow_forward),
               onPressed: () {
-                _scrollController.animateTo(
-                  _scrollController.offset + 200,
+                _scrollController2.animateTo(
+                  _scrollController2.offset + 200,
                   duration: Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
                 );
