@@ -93,6 +93,26 @@ class MoviesScreen extends StatelessWidget {
                 rating: 4.7,
                 image: 'assets/images/CATWS.jpg',
               ),
+              AppCard(
+                appName: 'Donnie Darko',
+                rating: 4.7,
+                image: 'assets/images/donniedarko.jpg',
+              ),
+              AppCard(
+                appName: 'Eternal Sunshine of the Spotless Mind',
+                rating: 4.8,
+                image: 'assets/images/eternalsunshine.jpg',
+              ),
+              AppCard(
+                appName: 'Pulp Fiction',
+                rating: 4.9,
+                image: 'assets/images/Pulp_Fiction.jpg',
+              ),
+              AppCard(
+                appName: 'Requiem for a Dream',
+                rating: 4.6,
+                image: 'assets/images/requiem.jpg',
+              ),
             ],
           ),
         ),
