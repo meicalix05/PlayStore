@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:google_play_emulator/widgets/app_card.dart';
+import '/widgets/app_card.dart';
+import 'app_details_screen.dart';
 
 class KidsScreen extends StatelessWidget {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
       children: [
+        SizedBox(height: 32.0),
         Container(
           width: double.infinity,
           height: 200,
@@ -57,36 +61,113 @@ class KidsScreen extends StatelessWidget {
           ),
         ),
         SizedBox(height: 16.0),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Text(
-            'Nuevas y actualizadas',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-        ),
-        SizedBox(height: 8.0),
-        Container(
-          height: 170,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              AppCard(
-                appName: 'Toca Boca Jr',
-                rating: 3.5,
-                image: 'assets/images/kids_content/TOCABOCAJR.png',
+        Row(
+          children: [
+            IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                _scrollController.animateTo(
+                  _scrollController.offset - 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            Expanded(
+              child: Container(
+                height: 170,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  controller: _scrollController,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Toca Boca Jr',
+                                  description:
+                                      'Un mundo de juegos creativos para niños pequeños.',
+                                  image:
+                                      'assets/images/kids_content/TOCABOCAJR.png',
+                                  rating: 4.8,
+                                  downloads: '50M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Toca Boca Jr',
+                        rating: 4.8,
+                        image: 'assets/images/kids_content/TOCABOCAJR.png',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'LEGO® DUPLO® World',
+                                  description:
+                                      'Juegos educativos para niños pequeños.',
+                                  image:
+                                      'assets/images/kids_content/LEGODUPLOWORLD.png',
+                                  rating: 4.7,
+                                  downloads: '10M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'LEGO® DUPLO® World',
+                        rating: 4.7,
+                        image: 'assets/images/kids_content/LEGODUPLOWORLD.png',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'LEGO® DUPLO® Peppa Pig',
+                                  description:
+                                      'Explora y construye con Peppa Pig y LEGO® DUPLO®.',
+                                  image:
+                                      'assets/images/kids_content/LEGODUPLOPEPPAPIG.png',
+                                  rating: 4.6,
+                                  downloads: '5M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'LEGO® DUPLO® Peppa Pig',
+                        rating: 4.6,
+                        image:
+                            'assets/images/kids_content/LEGODUPLOPEPPAPIG.png',
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              AppCard(
-                appName: 'LEGO® DUPLO® World',
-                rating: 4.1,
-                image: 'assets/images/kids_content/LEGODUPLOWORLD.png',
-              ),
-              AppCard(
-                appName: 'LEGO® DUPLO® Peppa Pig',
-                rating: 3.7,
-                image: 'assets/images/kids_content/LEGODUPLOPEPPAPIG.png',
-              ),
-            ],
-          ),
+            ),
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () {
+                _scrollController.animateTo(
+                  _scrollController.offset + 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+          ],
         ),
       ],
     );
