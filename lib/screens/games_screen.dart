@@ -499,6 +499,69 @@ class GamesScreen extends StatelessWidget {
                         image: 'images/games_content/stumble_guys.png',
                       ),
                     ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'FarmVille 3',
+                              description: 'Construye y gestiona tu propia granja.',
+                              image: 'images/games_content/Farmville3.webp',
+                              rating: 4.4,
+                              downloads: '50M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'FarmVille 3',
+                        rating: 4.4,
+                        image: 'images/games_content/Farmville3.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Homescapes',
+                              description: 'Renueva una mansión resolviendo rompecabezas.',
+                              image: 'images/games_content/Homescapes.webp',
+                              rating: 4.6,
+                              downloads: '100M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Homescapes',
+                        rating: 4.6,
+                        image: 'images/games_content/Homescapes.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Cooking Fever',
+                              description: 'Administra restaurantes y cocina deliciosos platos.',
+                              image: 'images/games_content/coocking_ferver.webp',
+                              rating: 4.5,
+                              downloads: '100M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Cooking Fever',
+                        rating: 4.5,
+                        image: 'images/games_content/coocking_ferver.webp',
+                      ),
+                    ),
                   ],
                 ),
               ),
