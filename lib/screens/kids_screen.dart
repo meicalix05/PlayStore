@@ -153,6 +153,195 @@ class KidsScreen extends StatelessWidget {
                             'assets/images/kids_content/LEGODUPLOPEPPAPIG.png',
                       ),
                     ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'ABC Kids',
+                              description: 'Aprende el alfabeto con juegos educativos.',
+                              image: 'images/kids_content/Abc_Kids.webp',
+                              rating: 4.5,
+                              downloads: '10M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'ABC Kids',
+                        rating: 4.5,
+                        image: 'images/kids_content/Abc_Kids.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Endless Alphabet',
+                              description: 'Divertidos rompecabezas para aprender palabras.',
+                              image: 'images/kids_content/Endless_alphabet.webp',
+                              rating: 4.8,
+                              downloads: '5M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Endless Alphabet',
+                        rating: 4.8,
+                        image: 'images/kids_content/Endless_alphabet.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'PBS Kids Games',
+                              description: 'Juegos educativos con personajes de PBS Kids.',
+                              image: 'images/kids_content/Pbs_kids_games.webp',
+                              rating: 4.6,
+                              downloads: '10M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'PBS Kids Games',
+                        rating: 4.6,
+                        image: 'images/kids_content/Pbs_kids_games.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Khan Academy Kids',
+                              description: 'Aprendizaje divertido para niños pequeños.',
+                              image: 'images/kids_content/Khan_academy_kids.webp',
+                              rating: 4.7,
+                              downloads: '1M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Khan Academy Kids',
+                        rating: 4.7,
+                        image: 'images/kids_content/Khan_academy_kids.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Toca Life World',
+                              description: 'Crea historias y explora mundos en Toca Life.',
+                              image: 'images/kids_content/Toca_Life_World.webp',
+                              rating: 4.8,
+                              downloads: '50M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Toca Life World',
+                        rating: 4.8,
+                        image: 'images/kids_content/Toca_Life_World.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Pepi Wonder World',
+                              description: 'Explora y crea historias mágicas en Pepi Wonder World.',
+                              image: 'images/kids_content/Pepi_Wonder_World.webp',
+                              rating: 4.6,
+                              downloads: '10M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Pepi Wonder World',
+                        rating: 4.6,
+                        image: 'images/kids_content/Pepi_Wonder_World.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Dr. Panda Town',
+                              description: 'Explora y juega en la ciudad de Dr. Panda.',
+                              image: 'images/kids_content/Dr_Panda_Town.webp',
+                              rating: 4.5,
+                              downloads: '10M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Dr. Panda Town',
+                        rating: 4.5,
+                        image: 'images/kids_content/Dr_Panda_Town.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Sago Mini World',
+                              description: 'Juegos creativos y educativos para niños pequeños.',
+                              image: 'images/kids_content/Sago_Mini_World.webp',
+                              rating: 4.7,
+                              downloads: '5M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Sago Mini World',
+                        rating: 4.7,
+                        image: 'images/kids_content/Sago_Mini_World.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Baby Shark World',
+                              description: 'Canta y juega con Baby Shark y su familia.',
+                              image: 'images/kids_content/Bay_Shark_World.webp',
+                              rating: 4.4,
+                              downloads: '10M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Baby Shark World',
+                        rating: 4.4,
+                        image: 'images/kids_content/Bay_Shark_World.webp',
+                      ),
+                    ),
                   ],
                 ),
               ),
