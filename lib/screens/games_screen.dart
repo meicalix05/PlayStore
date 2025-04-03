@@ -132,6 +132,132 @@ class GamesScreen extends StatelessWidget {
                         image: 'assets/images/games_content/LOR_LOGO.png',
                       ),
                     ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Call of Duty: Mobile',
+                              description: 'Un emocionante juego de disparos en primera persona.',
+                              image: 'images/games_content/cod_mobile.webp',
+                              rating: 4.7,
+                              downloads: '100M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Call of Duty: Mobile',
+                        rating: 4.7,
+                        image: 'images/games_content/cod_mobile.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Genshin Impact',
+                              description: 'Un RPG de mundo abierto con gráficos impresionantes.',
+                              image: 'images/games_content/Genshin_Impact.webp',
+                              rating: 4.6,
+                              downloads: '50M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Genshin Impact',
+                        rating: 4.6,
+                        image: 'images/games_content/Genshin_Impact.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'PUBG Mobile',
+                              description: 'Un juego de batalla real lleno de acción.',
+                              image: 'images/games_content/pubg.jpg',
+                              rating: 4.5,
+                              downloads: '500M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'PUBG Mobile',
+                        rating: 4.5,
+                        image: 'images/games_content/pubg.jpg',
+                      ),
+                    ),
+                     GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Apex Legends Mobile',
+                              description: 'Un juego de disparos y estrategia en equipo.',
+                              image: 'images/games_content/Apex_mobile.webp',
+                              rating: 4.3,
+                              downloads: '10M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Apex Legends Mobile',
+                        rating: 4.3,
+                        image: 'images/games_content/Apex_mobile.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Fortnite',
+                              description: 'Un juego de batalla real lleno de acción y construcción.',
+                              image: 'images/games_content/Fortnite_mobile.webp',
+                              rating: 4.6,
+                              downloads: '100M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Fortnite',  
+                        rating: 4.6,
+                        image: 'images/games_content/Fortnite_mobile.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Brawl Stars',
+                              description: 'Un juego de batallas multijugador rápidas y emocionantes.',
+                              image: 'images/games_content/Brawl_Stars.jpeg',
+                              rating: 4.7,
+                              downloads: '100M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Brawl Stars',
+                        rating: 4.7,
+                        image: 'images/games_content/Brawl_Stars.jpeg',
+                      ),
+                    ),
                   ],
                 ),
               ),
