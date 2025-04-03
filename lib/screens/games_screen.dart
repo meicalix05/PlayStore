@@ -331,6 +331,48 @@ class GamesScreen extends StatelessWidget {
                         image: 'images/games_content/PlantsvsZombies.webp',
                       ),
                     ),
+                       GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Minecraft',
+                              description: 'Explora mundos infinitos y construye lo que imagines.',
+                              image: 'images/games_content/minecraft.webp',
+                              rating: 4.8,
+                              downloads: '10M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Minecraft',
+                        rating: 4.8,
+                        image: 'images/games_content/minecraft.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Stumble Guys',
+                              description: 'Un divertido juego multijugador de carreras y obstáculos.',
+                              image: 'images/games_content/stumble_guys.png',
+                              rating: 4.6,
+                              downloads: '100M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Stumble Guys',
+                        rating: 4.6,
+                        image: 'images/games_content/stumble_guys.png',
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -344,6 +386,7 @@ class GamesScreen extends StatelessWidget {
                   curve: Curves.easeInOut,
                 );
               },
+              
             ),
           ],
         ),
