@@ -347,6 +347,216 @@ class AppsScreen extends StatelessWidget {
                             'assets/images/apps_content/AMAZONPHOTOS_LOGO.png',
                       ),
                     ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Spotify',
+                              description: 'Escucha música y podcasts en cualquier momento.',
+                              image: 'images/apps_content/spotify.png',
+                              rating: 4.7,
+                              downloads: '1B+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Spotify',
+                        rating: 4.7,
+                        image: 'images/apps_content/spotify.png',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'TikTok',
+                              description: 'Crea y descubre videos cortos y divertidos.',
+                              image: 'images/apps_content/Tiktok.webp',
+                              rating: 4.6,
+                              downloads: '2B+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'TikTok',
+                        rating: 4.6,
+                        image: 'images/apps_content/Tiktok.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Google Drive',
+                              description: 'Almacena y accede a tus archivos desde cualquier lugar.',
+                              image: 'images/apps_content/Google_Drive.webp',
+                              rating: 4.8,
+                              downloads: '5B+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Google Drive',
+                        rating: 4.8,
+                        image: 'images/apps_content/Google_Drive.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Instagram',
+                              description: 'Comparte fotos y videos con tus amigos.',
+                              image: 'images/apps_content/Instagram.webp',
+                              rating: 4.5,
+                              downloads: '5B+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Instagram',
+                        rating: 4.5,
+                        image: 'images/apps_content/Instagram.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Snapchat',
+                              description: 'Envía fotos y videos que desaparecen.',
+                              image: 'images/apps_content/Snapchat.webp',
+                              rating: 4.3,
+                              downloads: '1B+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Snapchat',
+                        rating: 4.3,
+                        image: 'images/apps_content/Snapchat.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Zoom',
+                              description: 'Realiza videollamadas y reuniones virtuales.',
+                              image: 'images/apps_content/Zoom.webp',
+                              rating: 4.6,
+                              downloads: '500M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Zoom',
+                        rating: 4.6,
+                        image: 'images/apps_content/Zoom.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Canva',
+                              description: 'Diseña gráficos, presentaciones y más.',
+                              image: 'images/apps_content/Canva.webp',
+                              rating: 4.8,
+                              downloads: '100M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Canva',
+                        rating: 4.8,
+                        image: 'images/apps_content/Canva.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Pinterest',
+                              description: 'Encuentra ideas e inspírate con imágenes.',
+                              image: 'images/apps_content/Pinterest.webp',
+                              rating: 4.6,
+                              downloads: '1B+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Pinterest',
+                        rating: 4.6,
+                        image: 'images/apps_content/Pinterest.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Trello',
+                              description: 'Organiza tus proyectos y tareas fácilmente.',
+                              image: 'images/apps_content/Trello.webp',
+                              rating: 4.7,
+                              downloads: '50M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Trello',
+                        rating: 4.7,
+                        image: 'images/apps_content/Trello.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AppDetailsScreen(
+                              appName: 'Duolingo',
+                              description: 'Aprende idiomas de forma divertida y gratuita.',
+                              image: 'images/apps_content/Duolingo.webp',
+                              rating: 4.8,
+                              downloads: '500M+',
+                            ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Duolingo',
+                        rating: 4.8,
+                        image: 'images/apps_content/Duolingo.webp',
+                      ),
+                    ),
                   ],
                 ),
               ),
