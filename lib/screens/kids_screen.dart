@@ -11,7 +11,7 @@ class KidsScreen extends StatelessWidget {
           height: 200,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/KIDS_HEADER.png'),
+              image: AssetImage('assets/images/kids_content/KIDS_HEADER.png'),
               fit: BoxFit.cover,
             ),
           ),
@@ -73,17 +73,17 @@ class KidsScreen extends StatelessWidget {
               AppCard(
                 appName: 'Toca Boca Jr',
                 rating: 3.5,
-                image: 'assets/images/TOCABOCAJR.png',
+                image: 'assets/images/kids_content/TOCABOCAJR.png',
               ),
               AppCard(
                 appName: 'LEGO® DUPLO® World',
                 rating: 4.1,
-                image: 'assets/images/LEGODUPLOWORLD.png',
+                image: 'assets/images/kids_content/LEGODUPLOWORLD.png',
               ),
               AppCard(
                 appName: 'LEGO® DUPLO® Peppa Pig',
                 rating: 3.7,
-                image: 'assets/images/LEGODUPLOPEPPAPIG.png',
+                image: 'assets/images/kids_content/LEGODUPLOPEPPAPIG.png',
               ),
             ],
           ),

@@ -28,7 +28,7 @@ class GamesScreen extends StatelessWidget {
                           (context) => AppDetailsScreen(
                             appName: 'Clash of Clans',
                             description: 'Un juego de estrategia épico.',
-                            image: 'assets/images/COC_LOGO.png',
+                            image: 'assets/images/games_content/COC_LOGO.png',
                             rating: 5.0,
                             downloads: '500M+',
                           ),
@@ -38,7 +38,7 @@ class GamesScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Clash of Clans',
                   rating: 5.0,
-                  image: 'assets/images/COC_LOGO.png',
+                  image: 'assets/images/games_content/COC_LOGO.png',
                 ),
               ),
               GestureDetector(
@@ -51,7 +51,7 @@ class GamesScreen extends StatelessWidget {
                             appName: 'Clash Royale',
                             description:
                                 'Un juego de cartas y estrategia en tiempo real.',
-                            image: 'assets/images/CR_LOGO.png',
+                            image: 'assets/images/games_content/CR_LOGO.png',
                             rating: 4.8,
                             downloads: '100M+',
                           ),
@@ -61,7 +61,7 @@ class GamesScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Clash Royale',
                   rating: 4.8,
-                  image: 'assets/images/CR_LOGO.png',
+                  image: 'assets/images/games_content/CR_LOGO.png',
                 ),
               ),
               GestureDetector(
@@ -74,7 +74,8 @@ class GamesScreen extends StatelessWidget {
                             appName: 'Wild Rift',
                             description:
                                 'League of Legends: Wild Rift es un MOBA para móviles.',
-                            image: 'assets/images/WILDRIFT_LOGO.png',
+                            image:
+                                'assets/images/games_content/WILDRIFT_LOGO.png',
                             rating: 4.9,
                             downloads: '50M+',
                           ),
@@ -84,7 +85,7 @@ class GamesScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Wild Rift',
                   rating: 4.9,
-                  image: 'assets/images/WILDRIFT_LOGO.png',
+                  image: 'assets/images/games_content/WILDRIFT_LOGO.png',
                 ),
               ),
               GestureDetector(
@@ -97,7 +98,7 @@ class GamesScreen extends StatelessWidget {
                             appName: 'Legends of Runeterra',
                             description:
                                 'Un juego de cartas estratégico basado en el universo de LoL.',
-                            image: 'assets/images/LOR_LOGO.png',
+                            image: 'assets/images/games_content/LOR_LOGO.png',
                             rating: 4.9,
                             downloads: '10M+',
                           ),
@@ -107,7 +108,7 @@ class GamesScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Legends of Runeterra',
                   rating: 4.9,
-                  image: 'assets/images/LOR_LOGO.png',
+                  image: 'assets/images/games_content/LOR_LOGO.png',
                 ),
               ),
               GestureDetector(
@@ -120,7 +121,8 @@ class GamesScreen extends StatelessWidget {
                             appName: 'Mario Kart Tour',
                             description:
                                 'Corre con Mario y sus amigos en pistas emocionantes.',
-                            image: 'assets/images/MARIOKARTTOUR_LOGO.png',
+                            image:
+                                'assets/images/games_content/MARIOKARTTOUR_LOGO.png',
                             rating: 4.7,
                             downloads: '100M+',
                           ),
@@ -130,7 +132,7 @@ class GamesScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Mario Kart Tour',
                   rating: 4.7,
-                  image: 'assets/images/MARIOKARTTOUR_LOGO.png',
+                  image: 'assets/images/games_content/MARIOKARTTOUR_LOGO.png',
                 ),
               ),
               GestureDetector(
@@ -143,7 +145,8 @@ class GamesScreen extends StatelessWidget {
                             appName: 'Angry Birds 2',
                             description:
                                 'Dispara pájaros en estructuras para derribar a los cerdos.',
-                            image: 'assets/images/ANGRYBIRDS2_LOGO.png',
+                            image:
+                                'assets/images/games_content/ANGRYBIRDS2_LOGO.png',
                             rating: 4.7,
                             downloads: '100M+',
                           ),
@@ -153,7 +156,7 @@ class GamesScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Angry Birds 2',
                   rating: 4.7,
-                  image: 'assets/images/ANGRYBIRDS2_LOGO.png',
+                  image: 'assets/images/games_content/ANGRYBIRDS2_LOGO.png',
                 ),
               ),
             ],

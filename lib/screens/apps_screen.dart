@@ -29,7 +29,8 @@ class AppsScreen extends StatelessWidget {
                             appName: 'Audible',
                             description:
                                 'Audible es una aplicación para escuchar audiolibros y podcasts.',
-                            image: 'assets/images/AUDIBLE_LOGO.png',
+                            image:
+                                'assets/images/apps_content/AUDIBLE_LOGO.png',
                             rating: 5.0,
                             downloads: '500M+',
                           ),
@@ -39,7 +40,7 @@ class AppsScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Audible',
                   rating: 5.0,
-                  image: 'assets/images/AUDIBLE_LOGO.png',
+                  image: 'assets/images/apps_content/AUDIBLE_LOGO.png',
                 ),
               ),
               GestureDetector(
@@ -52,7 +53,8 @@ class AppsScreen extends StatelessWidget {
                             appName: 'Amazon Photos',
                             description:
                                 'Amazon Photos te permite almacenar y organizar tus fotos.',
-                            image: 'assets/images/AMAZONPHOTOS_LOGO.png',
+                            image:
+                                'assets/images/apps_content/AMAZONPHOTOS_LOGO.png',
                             rating: 4.0,
                             downloads: '100M+',
                           ),
@@ -62,7 +64,7 @@ class AppsScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Amazon Photos',
                   rating: 4.0,
-                  image: 'assets/images/AMAZONPHOTOS_LOGO.png',
+                  image: 'assets/images/apps_content/AMAZONPHOTOS_LOGO.png',
                 ),
               ),
               GestureDetector(
@@ -75,7 +77,7 @@ class AppsScreen extends StatelessWidget {
                             appName: 'Lens',
                             description:
                                 'Microsoft Lens es una herramienta para escanear documentos y pizarras.',
-                            image: 'assets/images/LENS_LOGO.png',
+                            image: 'assets/images/apps_content/LENS_LOGO.png',
                             rating: 4.9,
                             downloads: '50M+',
                           ),
@@ -85,7 +87,7 @@ class AppsScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Lens',
                   rating: 4.9,
-                  image: 'assets/images/LENS_LOGO.png',
+                  image: 'assets/images/apps_content/LENS_LOGO.png',
                 ),
               ),
               GestureDetector(
@@ -98,7 +100,8 @@ class AppsScreen extends StatelessWidget {
                             appName: 'TaxDown',
                             description:
                                 'TaxDown te ayuda a gestionar tus impuestos de manera sencilla.',
-                            image: 'assets/images/TAXDOWN_LOGO.png',
+                            image:
+                                'assets/images/apps_content/TAXDOWN_LOGO.png',
                             rating: 4.9,
                             downloads: '10M+',
                           ),
@@ -108,7 +111,7 @@ class AppsScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'TaxDown',
                   rating: 4.9,
-                  image: 'assets/images/TAXDOWN_LOGO.png',
+                  image: 'assets/images/apps_content/TAXDOWN_LOGO.png',
                 ),
               ),
               GestureDetector(
@@ -121,7 +124,8 @@ class AppsScreen extends StatelessWidget {
                             appName: 'WhatsApp',
                             description:
                                 'WhatsApp es una aplicación de mensajería instantánea.',
-                            image: 'assets/images/Whatsapplogo.webp',
+                            image:
+                                'assets/images/apps_content/Whatsapplogo.webp',
                             rating: 4.9,
                             downloads: '5B+',
                           ),
@@ -131,7 +135,7 @@ class AppsScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'WhatsApp',
                   rating: 4.9,
-                  image: 'assets/images/Whatsapplogo.webp',
+                  image: 'assets/images/apps_content/Whatsapplogo.webp',
                 ),
               ),
               GestureDetector(
@@ -144,7 +148,7 @@ class AppsScreen extends StatelessWidget {
                             appName: 'Waze',
                             description:
                                 'Waze es una aplicación de navegación GPS con información en tiempo real.',
-                            image: 'assets/images/Waze.png',
+                            image: 'assets/images/apps_content/Waze.png',
                             rating: 4.9,
                             downloads: '100M+',
                           ),
@@ -154,7 +158,7 @@ class AppsScreen extends StatelessWidget {
                 child: AppCard(
                   appName: 'Waze',
                   rating: 4.9,
-                  image: 'assets/images/Waze.png',
+                  image: 'assets/images/apps_content/Waze.png',
                 ),
               ),
             ],
