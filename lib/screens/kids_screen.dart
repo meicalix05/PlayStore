@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_play_emulator/widgets/app_card.dart';
 
 class KidsScreen extends StatelessWidget {
   @override
@@ -52,6 +52,38 @@ class KidsScreen extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
                 child: Text('9-12 años'),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 16.0),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Text(
+            'Nuevas y actualizadas',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        SizedBox(height: 8.0),
+        Container(
+          height: 170,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              AppCard(
+                appName: 'Toca Boca Jr',
+                rating: 3.5,
+                image: 'assets/images/TOCABOCAJR.png',
+              ),
+              AppCard(
+                appName: 'LEGO® DUPLO® World',
+                rating: 4.1,
+                image: 'assets/images/LEGODUPLOWORLD.png',
+              ),
+              AppCard(
+                appName: 'LEGO® DUPLO® Peppa Pig',
+                rating: 3.7,
+                image: 'assets/images/LEGODUPLOPEPPAPIG.png',
               ),
             ],
           ),
