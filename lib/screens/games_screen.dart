@@ -5,12 +5,330 @@ import 'app_details_screen.dart';
 class GamesScreen extends StatelessWidget {
   final ScrollController _scrollController1 = ScrollController();
   final ScrollController _scrollController2 = ScrollController();
+  final ScrollController _scrollController3 = ScrollController();
+  final ScrollController _scrollController4 = ScrollController();
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        // Primera sección
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: Container(
+                  height: 250,
+                  margin: EdgeInsets.symmetric(horizontal: 4.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        blurRadius: 5,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/images/games_content/MINECRAFT_CARDBG.webp',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.black.withOpacity(0.9),
+                              Colors.transparent,
+                            ],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Explora mundos infinitos y construye todo lo que imagines.',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 8.0),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/games_content/minecraft.webp',
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                    SizedBox(width: 8.0),
+                                    Text(
+                                      'Minecraft',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => AppDetailsScreen(
+                                              appName: 'Minecraft',
+                                              description:
+                                                  'Explora mundos infinitos y construye todo lo que imagines.',
+                                              image:
+                                                  'assets/images/games_content/MINECRAFT_CARDBG.webp',
+                                              rating: 4.8,
+                                              downloads: '10M+',
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blueGrey,
+                                    foregroundColor: Colors.white,
+                                  ),
+                                  child: Text('Descargar'),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              Expanded(
+                child: Container(
+                  height: 250,
+                  margin: EdgeInsets.symmetric(horizontal: 4.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        blurRadius: 5,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/images/games_content/8BALLPOOL_CARDBG.webp',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.black.withOpacity(0.9),
+                              Colors.transparent,
+                            ],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'El juego de billar más popular del mundo. ¡Compite en línea!',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 8.0),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/games_content/8BALLPOOL.png',
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                    SizedBox(width: 8.0),
+                                    Text(
+                                      '8 Ball Pool',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => AppDetailsScreen(
+                                              appName: '8 Ball Pool',
+                                              description:
+                                                  'El juego de billar más popular del mundo. ¡Compite en línea!',
+                                              image:
+                                                  'assets/images/games_content/8BALLPOOL_CARDBG.webp',
+                                              rating: 4.7,
+                                              downloads: '500M+',
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blueGrey,
+                                    foregroundColor: Colors.white,
+                                  ),
+                                  child: Text('Descargar'),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              Expanded(
+                child: Container(
+                  height: 250,
+                  margin: EdgeInsets.symmetric(horizontal: 4.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        blurRadius: 5,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/images/games_content/ODIN_CARDBG.webp',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.black.withOpacity(0.9),
+                              Colors.transparent,
+                            ],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Embárcate en una aventura épica en la mitología nórdica.',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 8.0),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/games_content/ODINVALHALLARISING.webp',
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                    SizedBox(width: 8.0),
+                                    Text(
+                                      'Odin',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => AppDetailsScreen(
+                                              appName: 'Odin: Valhalla Rising',
+                                              description:
+                                                  'Embárcate en una aventura épica en la mitología nórdica.',
+                                              image:
+                                                  'assets/images/games_content/ODIN_CARDBG.webp',
+                                              rating: 4.6,
+                                              downloads: '1M+',
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blueGrey,
+                                    foregroundColor: Colors.white,
+                                  ),
+                                  child: Text('Preregistrar'),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        // Primera sección: Juegos recomendados para ti
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
@@ -45,7 +363,7 @@ class GamesScreen extends StatelessWidget {
                             builder:
                                 (context) => AppDetailsScreen(
                                   appName: 'Clash of Clans',
-                                  description: 'Un juego de estrategia épico.',
+                                  description: 'Construye tu aldea y compite.',
                                   image:
                                       'assets/images/games_content/COC_LOGO.png',
                                   rating: 5.0,
@@ -68,8 +386,7 @@ class GamesScreen extends StatelessWidget {
                             builder:
                                 (context) => AppDetailsScreen(
                                   appName: 'Clash Royale',
-                                  description:
-                                      'Un juego de cartas y estrategia en tiempo real.',
+                                  description: 'Batallas en tiempo real.',
                                   image:
                                       'assets/images/games_content/CR_LOGO.png',
                                   rating: 4.8,
@@ -92,8 +409,7 @@ class GamesScreen extends StatelessWidget {
                             builder:
                                 (context) => AppDetailsScreen(
                                   appName: 'Wild Rift',
-                                  description:
-                                      'League of Legends: Wild Rift es un MOBA para móviles.',
+                                  description: 'MOBA en tu móvil.',
                                   image:
                                       'assets/images/games_content/WILDRIFT_LOGO.png',
                                   rating: 4.9,
@@ -116,8 +432,7 @@ class GamesScreen extends StatelessWidget {
                             builder:
                                 (context) => AppDetailsScreen(
                                   appName: 'Legends of Runeterra',
-                                  description:
-                                      'Un juego de cartas estratégico basado en el universo de LoL.',
+                                  description: 'Juego de cartas estratégico.',
                                   image:
                                       'assets/images/games_content/LOR_LOGO.png',
                                   rating: 4.9,
@@ -137,125 +452,22 @@ class GamesScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Call of Duty: Mobile',
-                              description: 'Un emocionante juego de disparos en primera persona.',
-                              image: 'images/games_content/cod_mobile.webp',
-                              rating: 4.7,
-                              downloads: '100M+',
-                            ),
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Call of Duty: Mobile',
+                                  description: 'Acción y disparos en tu móvil.',
+                                  image:
+                                      'assets/images/games_content/cod_mobile.webp',
+                                  rating: 4.7,
+                                  downloads: '100M+',
+                                ),
                           ),
                         );
                       },
                       child: AppCard(
                         appName: 'Call of Duty: Mobile',
                         rating: 4.7,
-                        image: 'images/games_content/cod_mobile.webp',
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Genshin Impact',
-                              description: 'Un RPG de mundo abierto con gráficos impresionantes.',
-                              image: 'images/games_content/Genshin_Impact.webp',
-                              rating: 4.6,
-                              downloads: '50M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'Genshin Impact',
-                        rating: 4.6,
-                        image: 'images/games_content/Genshin_Impact.webp',
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'PUBG Mobile',
-                              description: 'Un juego de batalla real lleno de acción.',
-                              image: 'images/games_content/pubg.jpg',
-                              rating: 4.5,
-                              downloads: '500M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'PUBG Mobile',
-                        rating: 4.5,
-                        image: 'images/games_content/pubg.jpg',
-                      ),
-                    ),
-                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Apex Legends Mobile',
-                              description: 'Un juego de disparos y estrategia en equipo.',
-                              image: 'images/games_content/Apex_mobile.webp',
-                              rating: 4.3,
-                              downloads: '10M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'Apex Legends Mobile',
-                        rating: 4.3,
-                        image: 'images/games_content/Apex_mobile.webp',
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Fortnite',
-                              description: 'Un juego de batalla real lleno de acción y construcción.',
-                              image: 'images/games_content/Fortnite_mobile.webp',
-                              rating: 4.6,
-                              downloads: '100M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'Fortnite',  
-                        rating: 4.6,
-                        image: 'images/games_content/Fortnite_mobile.webp',
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Brawl Stars',
-                              description: 'Un juego de batallas multijugador rápidas y emocionantes.',
-                              image: 'images/games_content/Brawl_Stars.jpeg',
-                              rating: 4.7,
-                              downloads: '100M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'Brawl Stars',
-                        rating: 4.7,
-                        image: 'images/games_content/Brawl_Stars.jpeg',
+                        image: 'assets/images/games_content/cod_mobile.webp',
                       ),
                     ),
                   ],
@@ -275,7 +487,7 @@ class GamesScreen extends StatelessWidget {
           ],
         ),
 
-        // Segunda sección
+        // Segunda sección: Juegos casuales
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
@@ -310,12 +522,11 @@ class GamesScreen extends StatelessWidget {
                             builder:
                                 (context) => AppDetailsScreen(
                                   appName: 'Mario Kart Tour',
-                                  description:
-                                      'Corre con Mario y sus amigos en pistas emocionantes.',
+                                  description: 'Carreras llenas de diversión.',
                                   image:
                                       'assets/images/games_content/MARIOKARTTOUR_LOGO.png',
                                   rating: 4.7,
-                                  downloads: '100M+',
+                                  downloads: '50M+',
                                 ),
                           ),
                         );
@@ -336,7 +547,7 @@ class GamesScreen extends StatelessWidget {
                                 (context) => AppDetailsScreen(
                                   appName: 'Angry Birds 2',
                                   description:
-                                      'Dispara pájaros en estructuras para derribar a los cerdos.',
+                                      'Lanza pájaros y destruye estructuras.',
                                   image:
                                       'assets/images/games_content/ANGRYBIRDS2_LOGO.png',
                                   rating: 4.7,
@@ -352,25 +563,28 @@ class GamesScreen extends StatelessWidget {
                             'assets/images/games_content/ANGRYBIRDS2_LOGO.png',
                       ),
                     ),
-                     GestureDetector(
+                    GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Subway Surfers',
-                              description: 'Corre y esquiva trenes en este emocionante juego.',
-                              image: 'images/games_content/Subway_Surfers.WEBP',
-                              rating: 4.6,
-                              downloads: '1B+',
-                            ),
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Subway Surfers',
+                                  description: 'Corre y esquiva trenes.',
+                                  image:
+                                      'assets/images/games_content/Subway_Surfers.WEBP',
+                                  rating: 4.6,
+                                  downloads: '1B+',
+                                ),
                           ),
                         );
                       },
                       child: AppCard(
                         appName: 'Subway Surfers',
                         rating: 4.6,
-                        image: 'images/games_content/Subway_Surfers.WEBP',
+                        image:
+                            'assets/images/games_content/Subway_Surfers.WEBP',
                       ),
                     ),
                     GestureDetector(
@@ -378,20 +592,23 @@ class GamesScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Temple Run 2',
-                              description: 'Corre por tu vida en este juego de aventuras.',
-                              image: 'images/games_content/Temple_Run2.png',
-                              rating: 4.5,
-                              downloads: '500M+',
-                            ),
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Temple Run 2',
+                                  description:
+                                      'Corre y escapa de los obstáculos.',
+                                  image:
+                                      'assets/images/games_content/Temple_Run2.png',
+                                  rating: 4.5,
+                                  downloads: '500M+',
+                                ),
                           ),
                         );
                       },
                       child: AppCard(
                         appName: 'Temple Run 2',
                         rating: 4.5,
-                        image: 'images/games_content/Temple_Run2.png',
+                        image: 'assets/images/games_content/Temple_Run2.png',
                       ),
                     ),
                     GestureDetector(
@@ -399,20 +616,22 @@ class GamesScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Fruit Ninja',
-                              description: 'Corta frutas y evita bombas en este juego clásico.',
-                              image: 'images/games_content/Fruit_ninja.png',
-                              rating: 4.4,
-                              downloads: '100M+',
-                            ),
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Fruit Ninja',
+                                  description: 'Corta frutas y evita bombas.',
+                                  image:
+                                      'assets/images/games_content/Fruit_ninja.png',
+                                  rating: 4.4,
+                                  downloads: '500M+',
+                                ),
                           ),
                         );
                       },
                       child: AppCard(
                         appName: 'Fruit Ninja',
                         rating: 4.4,
-                        image: 'images/games_content/Fruit_ninja.png',
+                        image: 'assets/images/games_content/Fruit_ninja.png',
                       ),
                     ),
                     GestureDetector(
@@ -420,146 +639,23 @@ class GamesScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Hill Climb Racing',
-                              description: 'Conduce por colinas y supera obstáculos.',
-                              image: 'images/games_content/Hill_climb_racing.png',
-                              rating: 4.3,
-                              downloads: '500M+',
-                            ),
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Hill Climb Racing',
+                                  description: 'Conduce y supera colinas.',
+                                  image:
+                                      'assets/images/games_content/Hill_climb_racing.png',
+                                  rating: 4.3,
+                                  downloads: '500M+',
+                                ),
                           ),
                         );
                       },
                       child: AppCard(
                         appName: 'Hill Climb Racing',
                         rating: 4.3,
-                        image: 'images/games_content/Hill_climb_racing.png',
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Plants vs Zombies',
-                              description: 'Defiende tu jardín de los zombis con plantas.',
-                              image: 'images/games_content/PlantsvsZombies.webp',
-                              rating: 4.7,
-                              downloads: '100M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'Plants vs Zombies',
-                        rating: 4.7,
-                        image: 'images/games_content/PlantsvsZombies.webp',
-                      ),
-                    ),
-                       GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Minecraft',
-                              description: 'Explora mundos infinitos y construye lo que imagines.',
-                              image: 'images/games_content/minecraft.webp',
-                              rating: 4.8,
-                              downloads: '10M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'Minecraft',
-                        rating: 4.8,
-                        image: 'images/games_content/minecraft.webp',
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Stumble Guys',
-                              description: 'Un divertido juego multijugador de carreras y obstáculos.',
-                              image: 'images/games_content/stumble_guys.png',
-                              rating: 4.6,
-                              downloads: '100M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'Stumble Guys',
-                        rating: 4.6,
-                        image: 'images/games_content/stumble_guys.png',
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'FarmVille 3',
-                              description: 'Construye y gestiona tu propia granja.',
-                              image: 'images/games_content/Farmville3.webp',
-                              rating: 4.4,
-                              downloads: '50M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'FarmVille 3',
-                        rating: 4.4,
-                        image: 'images/games_content/Farmville3.webp',
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Homescapes',
-                              description: 'Renueva una mansión resolviendo rompecabezas.',
-                              image: 'images/games_content/Homescapes.webp',
-                              rating: 4.6,
-                              downloads: '100M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'Homescapes',
-                        rating: 4.6,
-                        image: 'images/games_content/Homescapes.webp',
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AppDetailsScreen(
-                              appName: 'Cooking Fever',
-                              description: 'Administra restaurantes y cocina deliciosos platos.',
-                              image: 'images/games_content/coocking_ferver.webp',
-                              rating: 4.5,
-                              downloads: '100M+',
-                            ),
-                          ),
-                        );
-                      },
-                      child: AppCard(
-                        appName: 'Cooking Fever',
-                        rating: 4.5,
-                        image: 'images/games_content/coocking_ferver.webp',
+                        image:
+                            'assets/images/games_content/Hill_climb_racing.png',
                       ),
                     ),
                   ],
@@ -575,7 +671,359 @@ class GamesScreen extends StatelessWidget {
                   curve: Curves.easeInOut,
                 );
               },
-              
+            ),
+          ],
+        ),
+
+        // Tercera sección: Juegos de acción
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Juegos de acción',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Row(
+          children: [
+            IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                _scrollController3.animateTo(
+                  _scrollController3.offset - 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            Expanded(
+              child: Container(
+                height: 170,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  controller: _scrollController3,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Genshin Impact',
+                                  description:
+                                      'Explora un mundo abierto lleno de aventuras.',
+                                  image:
+                                      'assets/images/games_content/Genshin_Impact.webp',
+                                  rating: 4.6,
+                                  downloads: '50M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Genshin Impact',
+                        rating: 4.6,
+                        image:
+                            'assets/images/games_content/Genshin_Impact.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'PUBG Mobile',
+                                  description:
+                                      'Batallas épicas en un campo de batalla.',
+                                  image: 'assets/images/games_content/pubg.jpg',
+                                  rating: 4.5,
+                                  downloads: '500M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'PUBG Mobile',
+                        rating: 4.5,
+                        image: 'assets/images/games_content/pubg.jpg',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Apex Legends Mobile',
+                                  description: 'Juego de disparos en equipo.',
+                                  image:
+                                      'assets/images/games_content/Apex_mobile.webp',
+                                  rating: 4.3,
+                                  downloads: '10M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Apex Legends Mobile',
+                        rating: 4.3,
+                        image: 'assets/images/games_content/Apex_mobile.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Fortnite',
+                                  description:
+                                      'Construye y lucha para ser el último en pie.',
+                                  image:
+                                      'assets/images/games_content/Fortnite_mobile.webp',
+                                  rating: 4.6,
+                                  downloads: '100M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Fortnite',
+                        rating: 4.6,
+                        image:
+                            'assets/images/games_content/Fortnite_mobile.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Brawl Stars',
+                                  description:
+                                      'Batallas rápidas y emocionantes.',
+                                  image:
+                                      'assets/images/games_content/Brawl_Stars.jpeg',
+                                  rating: 4.7,
+                                  downloads: '100M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Brawl Stars',
+                        rating: 4.7,
+                        image: 'assets/images/games_content/Brawl_Stars.jpeg',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () {
+                _scrollController3.animateTo(
+                  _scrollController3.offset + 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+          ],
+        ),
+
+        // Cuarta sección: Juegos de estrategia
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Juegos de estrategia',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Row(
+          children: [
+            IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                _scrollController4.animateTo(
+                  _scrollController4.offset - 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            Expanded(
+              child: Container(
+                height: 170,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  controller: _scrollController4,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Plants vs Zombies',
+                                  description:
+                                      'Defiende tu jardín de los zombis.',
+                                  image:
+                                      'assets/images/games_content/PlantsvsZombies.webp',
+                                  rating: 4.7,
+                                  downloads: '100M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Plants vs Zombies',
+                        rating: 4.7,
+                        image:
+                            'assets/images/games_content/PlantsvsZombies.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Minecraft',
+                                  description:
+                                      'Explora y construye en un mundo infinito.',
+                                  image:
+                                      'assets/images/games_content/minecraft.webp',
+                                  rating: 4.8,
+                                  downloads: '10M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Minecraft',
+                        rating: 4.8,
+                        image: 'assets/images/games_content/minecraft.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Stumble Guys',
+                                  description: 'Compite en carreras caóticas.',
+                                  image:
+                                      'assets/images/games_content/stumble_guys.png',
+                                  rating: 4.6,
+                                  downloads: '50M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Stumble Guys',
+                        rating: 4.6,
+                        image: 'assets/images/games_content/stumble_guys.png',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'FarmVille 3',
+                                  description:
+                                      'Construye y gestiona tu granja.',
+                                  image:
+                                      'assets/images/games_content/Farmville3.webp',
+                                  rating: 4.4,
+                                  downloads: '10M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'FarmVille 3',
+                        rating: 4.4,
+                        image: 'assets/images/games_content/Farmville3.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Homescapes',
+                                  description:
+                                      'Resuelve puzzles para renovar tu hogar.',
+                                  image:
+                                      'assets/images/games_content/Homescapes.webp',
+                                  rating: 4.6,
+                                  downloads: '100M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Homescapes',
+                        rating: 4.6,
+                        image: 'assets/images/games_content/Homescapes.webp',
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => AppDetailsScreen(
+                                  appName: 'Cooking Fever',
+                                  description:
+                                      'Gestiona restaurantes y cocina platos.',
+                                  image:
+                                      'assets/images/games_content/coocking_ferver.webp',
+                                  rating: 4.5,
+                                  downloads: '100M+',
+                                ),
+                          ),
+                        );
+                      },
+                      child: AppCard(
+                        appName: 'Cooking Fever',
+                        rating: 4.5,
+                        image:
+                            'assets/images/games_content/coocking_ferver.webp',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () {
+                _scrollController4.animateTo(
+                  _scrollController4.offset + 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
             ),
           ],
         ),

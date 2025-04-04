@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../widgets/app_card.dart';
 
 class MoviesScreen extends StatelessWidget {
-  final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController1 = ScrollController();
+  final ScrollController _scrollController2 = ScrollController();
+  final ScrollController _scrollController3 = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +43,15 @@ class MoviesScreen extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
-                  foregroundColor: Colors.lightBlue,
+                  foregroundColor: Colors.blueGrey,
                 ),
                 child: Text('Buscar en YouTube'),
               ),
             ],
           ),
         ),
+
+        // Primera sección: Las más vendidas
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
@@ -60,8 +64,8 @@ class MoviesScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.arrow_back),
               onPressed: () {
-                _scrollController.animateTo(
-                  _scrollController.offset - 200,
+                _scrollController1.animateTo(
+                  _scrollController1.offset - 200,
                   duration: Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
                 );
@@ -72,7 +76,7 @@ class MoviesScreen extends StatelessWidget {
                 height: 230,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  controller: _scrollController,
+                  controller: _scrollController1,
                   children: [
                     AppCard(
                       appName: 'Rango',
@@ -98,24 +102,118 @@ class MoviesScreen extends StatelessWidget {
                       image: 'assets/images/movies_content/infinitywar.webp',
                       height: 280,
                     ),
+                  ],
+                ),
+              ),
+            ),
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () {
+                _scrollController1.animateTo(
+                  _scrollController1.offset + 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+          ],
+        ),
+
+        // Segunda sección: Películas de acción
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Películas de acción',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Row(
+          children: [
+            IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                _scrollController2.animateTo(
+                  _scrollController2.offset - 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            Expanded(
+              child: Container(
+                height: 230,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  controller: _scrollController2,
+                  children: [
                     AppCard(
-                      appName: 'Spider Man:\nInto the Spiderverse',
+                      appName: 'Spider Man: Into the Spiderverse',
                       rating: 4.7,
                       image: 'assets/images/movies_content/ITSV.jpg',
                       height: 280,
                     ),
                     AppCard(
-                      appName: 'Spider Man:\nAcross the Spiderverse',
+                      appName: 'Spider Man: Across the Spiderverse',
                       rating: 4.7,
                       image: 'assets/images/movies_content/ATSV.jpg',
                       height: 280,
                     ),
                     AppCard(
-                      appName: 'Captain America and\nThe Winter Soldier',
+                      appName: 'Captain America and The Winter Soldier',
                       rating: 4.7,
                       image: 'assets/images/movies_content/CATWS.jpg',
                       height: 280,
                     ),
+                    AppCard(
+                      appName: 'John Wick',
+                      rating: 4.7,
+                      image: 'assets/images/movies_content/JOHNWICK.webp',
+                      height: 280,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () {
+                _scrollController2.animateTo(
+                  _scrollController2.offset + 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+          ],
+        ),
+
+        // Tercera sección: Películas clásicas
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Películas clásicas',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Row(
+          children: [
+            IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                _scrollController3.animateTo(
+                  _scrollController3.offset - 200,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            Expanded(
+              child: Container(
+                height: 230,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  controller: _scrollController3,
+                  children: [
                     AppCard(
                       appName: 'Donnie Darko',
                       rating: 4.7,
@@ -147,8 +245,8 @@ class MoviesScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.arrow_forward),
               onPressed: () {
-                _scrollController.animateTo(
-                  _scrollController.offset + 200,
+                _scrollController3.animateTo(
+                  _scrollController3.offset + 200,
                   duration: Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
                 );
