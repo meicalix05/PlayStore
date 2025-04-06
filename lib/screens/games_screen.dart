@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import '/widgets/app_card.dart';
 import 'app_details_screen.dart';
@@ -17,314 +18,82 @@ class GamesScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Expanded(
-                child: Container(
-                  height: 250,
-                  margin: EdgeInsets.symmetric(horizontal: 4.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.3),
-                        blurRadius: 5,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    image: DecorationImage(
-                      image: AssetImage(
+              if (Platform.isAndroid)
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      _buildGameCard(
+                        context,
+                        'Minecraft',
+                        'Explora mundos infinitos y construye todo lo que imagines.',
                         'assets/images/games_content/MINECRAFT_CARDBG.webp',
+                        'assets/images/games_content/minecraft.webp',
+                        4.8,
+                        '10M+',
+                        'Descargar',
                       ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          gradient: LinearGradient(
-                            colors: [
-                              Colors.black.withOpacity(0.9),
-                              Colors.transparent,
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Explora mundos infinitos y construye todo lo que imagines.',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 8.0),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/games_content/minecraft.webp',
-                                      width: 40,
-                                      height: 40,
-                                    ),
-                                    SizedBox(width: 8.0),
-                                    Text(
-                                      'Minecraft',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder:
-                                            (context) => AppDetailsScreen(
-                                              appName: 'Minecraft',
-                                              description:
-                                                  'Explora mundos infinitos y construye todo lo que imagines.',
-                                              image:
-                                                  'assets/images/games_content/MINECRAFT_CARDBG.webp',
-                                              rating: 4.8,
-                                              downloads: '10M+',
-                                            ),
-                                      ),
-                                    );
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blueGrey,
-                                    foregroundColor: Colors.white,
-                                  ),
-                                  child: Text('Descargar'),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-
-              Expanded(
-                child: Container(
-                  height: 250,
-                  margin: EdgeInsets.symmetric(horizontal: 4.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.3),
-                        blurRadius: 5,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    image: DecorationImage(
-                      image: AssetImage(
+                      _buildGameCard(
+                        context,
+                        '8 Ball Pool',
+                        'El juego de billar más popular del mundo. ¡Compite en línea!',
                         'assets/images/games_content/8BALLPOOL_CARDBG.webp',
+                        'assets/images/games_content/8BALLPOOL.png',
+                        4.7,
+                        '500M+',
+                        'Descargar',
                       ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          gradient: LinearGradient(
-                            colors: [
-                              Colors.black.withOpacity(0.9),
-                              Colors.transparent,
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'El juego de billar más popular del mundo. ¡Compite en línea!',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 8.0),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/games_content/8BALLPOOL.png',
-                                      width: 40,
-                                      height: 40,
-                                    ),
-                                    SizedBox(width: 8.0),
-                                    Text(
-                                      '8 Ball Pool',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder:
-                                            (context) => AppDetailsScreen(
-                                              appName: '8 Ball Pool',
-                                              description:
-                                                  'El juego de billar más popular del mundo. ¡Compite en línea!',
-                                              image:
-                                                  'assets/images/games_content/8BALLPOOL_CARDBG.webp',
-                                              rating: 4.7,
-                                              downloads: '500M+',
-                                            ),
-                                      ),
-                                    );
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blueGrey,
-                                    foregroundColor: Colors.white,
-                                  ),
-                                  child: Text('Descargar'),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-
-              Expanded(
-                child: Container(
-                  height: 250,
-                  margin: EdgeInsets.symmetric(horizontal: 4.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.3),
-                        blurRadius: 5,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    image: DecorationImage(
-                      image: AssetImage(
+                      _buildGameCard(
+                        context,
+                        'Odin: Valhalla Rising',
+                        'Embárcate en una aventura épica en la mitología nórdica.',
                         'assets/images/games_content/ODIN_CARDBG.webp',
-                      ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          gradient: LinearGradient(
-                            colors: [
-                              Colors.black.withOpacity(0.9),
-                              Colors.transparent,
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Embárcate en una aventura épica en la mitología nórdica.',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 8.0),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/games_content/ODINVALHALLARISING.webp',
-                                      width: 40,
-                                      height: 40,
-                                    ),
-                                    SizedBox(width: 8.0),
-                                    Text(
-                                      'Odin',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder:
-                                            (context) => AppDetailsScreen(
-                                              appName: 'Odin: Valhalla Rising',
-                                              description:
-                                                  'Embárcate en una aventura épica en la mitología nórdica.',
-                                              image:
-                                                  'assets/images/games_content/ODIN_CARDBG.webp',
-                                              rating: 4.6,
-                                              downloads: '1M+',
-                                            ),
-                                      ),
-                                    );
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blueGrey,
-                                    foregroundColor: Colors.white,
-                                  ),
-                                  child: Text('Preregistrar'),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                        'assets/images/games_content/ODINVALHALLARISING.webp',
+                        4.6,
+                        '1M+',
+                        'Preregistrar',
                       ),
                     ],
                   ),
+                )
+              else ...[
+                Expanded(
+                  child: _buildGameCard(
+                    context,
+                    'Minecraft',
+                    'Explora mundos infinitos y construye todo lo que imagines.',
+                    'assets/images/games_content/MINECRAFT_CARDBG.webp',
+                    'assets/images/games_content/minecraft.webp',
+                    4.8,
+                    '10M+',
+                    'Descargar',
+                  ),
                 ),
-              ),
+                Expanded(
+                  child: _buildGameCard(
+                    context,
+                    '8 Ball Pool',
+                    'El juego de billar más popular del mundo. ¡Compite en línea!',
+                    'assets/images/games_content/8BALLPOOL_CARDBG.webp',
+                    'assets/images/games_content/8BALLPOOL.png',
+                    4.7,
+                    '500M+',
+                    'Descargar',
+                  ),
+                ),
+                Expanded(
+                  child: _buildGameCard(
+                    context,
+                    'Odin: Valhalla Rising',
+                    'Embárcate en una aventura épica en la mitología nórdica.',
+                    'assets/images/games_content/ODIN_CARDBG.webp',
+                    'assets/images/games_content/ODINVALHALLARISING.webp',
+                    4.6,
+                    '1M+',
+                    'Preregistrar',
+                  ),
+                ),
+              ],
             ],
           ),
         ),
@@ -338,16 +107,17 @@ class GamesScreen extends StatelessWidget {
         ),
         Row(
           children: [
-            IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                _scrollController1.animateTo(
-                  _scrollController1.offset - 200,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-            ),
+            if (!Platform.isAndroid)
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  _scrollController1.animateTo(
+                    _scrollController1.offset - 200,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
             Expanded(
               child: Container(
                 height: 170,
@@ -474,16 +244,17 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            IconButton(
-              icon: Icon(Icons.arrow_forward),
-              onPressed: () {
-                _scrollController1.animateTo(
-                  _scrollController1.offset + 200,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-            ),
+            if (!Platform.isAndroid)
+              IconButton(
+                icon: Icon(Icons.arrow_forward),
+                onPressed: () {
+                  _scrollController1.animateTo(
+                    _scrollController1.offset + 200,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
           ],
         ),
 
@@ -497,16 +268,17 @@ class GamesScreen extends StatelessWidget {
         ),
         Row(
           children: [
-            IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                _scrollController2.animateTo(
-                  _scrollController2.offset - 200,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-            ),
+            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  _scrollController1.animateTo(
+                    _scrollController1.offset - 200,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
             Expanded(
               child: Container(
                 height: 170,
@@ -662,16 +434,17 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            IconButton(
-              icon: Icon(Icons.arrow_forward),
-              onPressed: () {
-                _scrollController2.animateTo(
-                  _scrollController2.offset + 200,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-            ),
+            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  _scrollController1.animateTo(
+                    _scrollController1.offset - 200,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
           ],
         ),
 
@@ -685,16 +458,17 @@ class GamesScreen extends StatelessWidget {
         ),
         Row(
           children: [
-            IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                _scrollController3.animateTo(
-                  _scrollController3.offset - 200,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-            ),
+            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  _scrollController1.animateTo(
+                    _scrollController1.offset - 200,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
             Expanded(
               child: Container(
                 height: 170,
@@ -826,16 +600,17 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            IconButton(
-              icon: Icon(Icons.arrow_forward),
-              onPressed: () {
-                _scrollController3.animateTo(
-                  _scrollController3.offset + 200,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-            ),
+            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  _scrollController1.animateTo(
+                    _scrollController1.offset - 200,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
           ],
         ),
 
@@ -849,16 +624,17 @@ class GamesScreen extends StatelessWidget {
         ),
         Row(
           children: [
-            IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                _scrollController4.animateTo(
-                  _scrollController4.offset - 200,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-            ),
+            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  _scrollController1.animateTo(
+                    _scrollController1.offset - 200,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
             Expanded(
               child: Container(
                 height: 170,
@@ -1015,19 +791,116 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            IconButton(
-              icon: Icon(Icons.arrow_forward),
-              onPressed: () {
-                _scrollController4.animateTo(
-                  _scrollController4.offset + 200,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-            ),
+            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  _scrollController1.animateTo(
+                    _scrollController1.offset - 200,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
           ],
         ),
       ],
     );
   }
+}
+
+Widget _buildGameCard(
+  BuildContext context,
+  String appName,
+  String description,
+  String backgroundImage,
+  String logoImage,
+  double rating,
+  String downloads,
+  String buttonText,
+) {
+  return Container(
+    height: 250,
+    width: 350,
+    margin: EdgeInsets.symmetric(horizontal: 4.0),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(12),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.withOpacity(0.3),
+          blurRadius: 5,
+          offset: Offset(0, 3),
+        ),
+      ],
+      image: DecorationImage(
+        image: AssetImage(backgroundImage),
+        fit: BoxFit.cover,
+      ),
+    ),
+    child: Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            gradient: LinearGradient(
+              colors: [Colors.black.withOpacity(0.9), Colors.transparent],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                description,
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              ),
+              SizedBox(height: 8.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Image.asset(logoImage, width: 40, height: 40),
+                      SizedBox(width: 8.0),
+                      Text(
+                        appName,
+                        style: TextStyle(fontSize: 12, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder:
+                              (context) => AppDetailsScreen(
+                                appName: appName,
+                                description: description,
+                                image: backgroundImage,
+                                rating: rating,
+                                downloads: downloads,
+                              ),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueGrey,
+                      foregroundColor: Colors.white,
+                    ),
+                    child: Text(buttonText),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
 }

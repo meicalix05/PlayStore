@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import '/widgets/app_card.dart';
 import 'app_details_screen.dart';
@@ -99,16 +100,17 @@ class KidsScreen extends StatelessWidget {
           ),
           Row(
             children: [
-              IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {
-                  _scrollController1.animateTo(
-                    _scrollController1.offset - 200,
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
+              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+                IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    _scrollController1.animateTo(
+                      _scrollController1.offset - 200,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                ),
               Expanded(
                 child: Container(
                   height: 170,
@@ -219,16 +221,17 @@ class KidsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              IconButton(
-                icon: Icon(Icons.arrow_forward),
-                onPressed: () {
-                  _scrollController1.animateTo(
-                    _scrollController1.offset + 200,
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
+              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+                IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    _scrollController1.animateTo(
+                      _scrollController1.offset - 200,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                ),
             ],
           ),
 
@@ -242,16 +245,17 @@ class KidsScreen extends StatelessWidget {
           ),
           Row(
             children: [
-              IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {
-                  _scrollController2.animateTo(
-                    _scrollController2.offset - 200,
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
+              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+                IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    _scrollController1.animateTo(
+                      _scrollController1.offset - 200,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                ),
               Expanded(
                 child: Container(
                   height: 170,
@@ -358,16 +362,17 @@ class KidsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              IconButton(
-                icon: Icon(Icons.arrow_forward),
-                onPressed: () {
-                  _scrollController2.animateTo(
-                    _scrollController2.offset + 200,
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
+              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+                IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    _scrollController1.animateTo(
+                      _scrollController1.offset - 200,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                ),
             ],
           ),
 
@@ -381,16 +386,17 @@ class KidsScreen extends StatelessWidget {
           ),
           Row(
             children: [
-              IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {
-                  _scrollController3.animateTo(
-                    _scrollController3.offset - 200,
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
+              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+                IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    _scrollController1.animateTo(
+                      _scrollController1.offset - 200,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                ),
               Expanded(
                 child: Container(
                   height: 170,
@@ -500,16 +506,17 @@ class KidsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              IconButton(
-                icon: Icon(Icons.arrow_forward),
-                onPressed: () {
-                  _scrollController3.animateTo(
-                    _scrollController3.offset + 200,
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
+              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+                IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    _scrollController1.animateTo(
+                      _scrollController1.offset - 200,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                ),
             ],
           ),
         ],
