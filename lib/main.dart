@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'screens/apps_screen.dart';
 import 'screens/games_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: GooglePlayScreen(),
     );
   }
 }
@@ -33,31 +34,43 @@ class GooglePlayScreen extends StatefulWidget {
 class _GooglePlayScreenState extends State<GooglePlayScreen> {
   bool _isSearching = false;
   TextEditingController _searchController = TextEditingController();
+  int _currentIndex = 0;
+
+  final List<Widget> _screens = [
+    GamesScreen(),
+    AppsScreen(),
+    MoviesScreen(),
+    BooksScreen(),
+    KidsScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
+          backgroundColor: Colors.white,
           title: Stack(
             alignment: Alignment.center,
             children: [
               Row(
                 children: [
                   Image.asset(
-                    'assets/images/GOOGLEPLAY_LOGO.png',
-                    width: 30,
+                    Platform.isAndroid
+                        ? 'assets/images/GOOGLEPLAYICONLOGO.png'
+                        : 'assets/images/GOOGLEPLAYLOGO.png',
+                    width: Platform.isAndroid ? 30 : 130,
                     height: 30,
                   ),
-                  SizedBox(width: 8),
-                  Text('Google Play'),
                 ],
               ),
               if (_isSearching)
                 Center(
                   child: Container(
-                    width: 400,
+                    margin: EdgeInsets.only(left: Platform.isAndroid ? 45 : 0),
+                    width: Platform.isAndroid ? 300 : 700,
                     height: 40,
                     child: TextField(
                       controller: _searchController,
@@ -115,25 +128,59 @@ class _GooglePlayScreenState extends State<GooglePlayScreen> {
                   ],
             ),
           ],
-          bottom: TabBar(
-            tabs: [
-              Tab(text: 'Juegos'),
-              Tab(text: 'Apps'),
-              Tab(text: 'Películas'),
-              Tab(text: 'Libros'),
-              Tab(text: 'Niños'),
-            ],
-          ),
+          bottom:
+              Platform.isAndroid
+                  ? null
+                  : TabBar(
+                    tabs: [
+                      Tab(text: 'Juegos'),
+                      Tab(text: 'Apps'),
+                      Tab(text: 'Películas'),
+                      Tab(text: 'Libros'),
+                      Tab(text: 'Niños'),
+                    ],
+                  ),
         ),
-        body: TabBarView(
-          children: [
-            GamesScreen(),
-            AppsScreen(),
-            MoviesScreen(),
-            BooksScreen(),
-            KidsScreen(),
-          ],
-        ),
+        body:
+            Platform.isAndroid
+                ? _screens[_currentIndex]
+                : TabBarView(children: _screens),
+        bottomNavigationBar:
+            Platform.isAndroid
+                ? BottomNavigationBar(
+                  currentIndex: _currentIndex,
+                  onTap: (index) {
+                    setState(() {
+                      _currentIndex = index;
+                    });
+                  },
+                  backgroundColor: Colors.white,
+                  selectedItemColor: Colors.indigo,
+                  unselectedItemColor: Colors.grey,
+                  items: [
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.videogame_asset),
+                      label: 'Juegos',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.apps),
+                      label: 'Apps',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.movie),
+                      label: 'Películas',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.book),
+                      label: 'Libros',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.child_care),
+                      label: 'Niños',
+                    ),
+                  ],
+                )
+                : null,
       ),
     );
   }

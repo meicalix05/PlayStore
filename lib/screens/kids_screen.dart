@@ -100,7 +100,7 @@ class KidsScreen extends StatelessWidget {
           ),
           Row(
             children: [
-              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              if (!Platform.isAndroid)
                 IconButton(
                   icon: Icon(Icons.arrow_back),
                   onPressed: () {
@@ -221,12 +221,12 @@ class KidsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              if (!Platform.isAndroid)
                 IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: Icon(Icons.arrow_forward),
                   onPressed: () {
                     _scrollController1.animateTo(
-                      _scrollController1.offset - 200,
+                      _scrollController1.offset + 200,
                       duration: Duration(milliseconds: 300),
                       curve: Curves.easeInOut,
                     );
@@ -245,7 +245,7 @@ class KidsScreen extends StatelessWidget {
           ),
           Row(
             children: [
-              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              if (!Platform.isAndroid)
                 IconButton(
                   icon: Icon(Icons.arrow_back),
                   onPressed: () {
@@ -362,12 +362,12 @@ class KidsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              if (!Platform.isAndroid)
                 IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: Icon(Icons.arrow_forward),
                   onPressed: () {
                     _scrollController1.animateTo(
-                      _scrollController1.offset - 200,
+                      _scrollController1.offset + 200,
                       duration: Duration(milliseconds: 300),
                       curve: Curves.easeInOut,
                     );
@@ -386,7 +386,7 @@ class KidsScreen extends StatelessWidget {
           ),
           Row(
             children: [
-              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              if (!Platform.isAndroid)
                 IconButton(
                   icon: Icon(Icons.arrow_back),
                   onPressed: () {
@@ -506,12 +506,12 @@ class KidsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+              if (!Platform.isAndroid)
                 IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: Icon(Icons.arrow_forward),
                   onPressed: () {
                     _scrollController1.animateTo(
-                      _scrollController1.offset - 200,
+                      _scrollController1.offset + 200,
                       duration: Duration(milliseconds: 300),
                       curve: Curves.easeInOut,
                     );

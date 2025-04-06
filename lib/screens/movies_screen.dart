@@ -12,44 +12,80 @@ class MoviesScreen extends StatelessWidget {
     return ListView(
       children: [
         Container(
-          width: double.infinity,
+          width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.all(8.0),
           padding: EdgeInsets.all(16.0),
           decoration: BoxDecoration(
             color: Colors.blueGrey,
             borderRadius: BorderRadius.circular(8.0),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '¡Renta o compra películas en YouTube o Google TV!',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+          child:
+              Platform.isAndroid
+                  ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '¡Renta o compra películas en YouTube o Google TV!',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 8.0),
+                      Text(
+                        'Comprar películas en Google Play ya no está disponible.',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
+                      SizedBox(
+                        height: 16.0,
+                      ), // Espaciado entre el texto y el botón
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.blueGrey,
+                        ),
+                        child: Text('Buscar en YouTube'),
+                      ),
+                    ],
+                  )
+                  : Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '¡Renta o compra películas en YouTube o Google TV!',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 8.0),
+                            Text(
+                              'Comprar películas en Google Play ya no está disponible.',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.blueGrey,
+                        ),
+                        child: Text('Buscar en YouTube'),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 8.0),
-                  Text(
-                    'Comprar películas en Google Play ya no está disponible.',
-                    style: TextStyle(fontSize: 16, color: Colors.white),
-                  ),
-                ],
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.blueGrey,
-                ),
-                child: Text('Buscar en YouTube'),
-              ),
-            ],
-          ),
         ),
 
         // Primera sección: Las más vendidas
@@ -108,12 +144,12 @@ class MoviesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+            if (!Platform.isAndroid)
               IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_forward),
                 onPressed: () {
                   _scrollController1.animateTo(
-                    _scrollController1.offset - 200,
+                    _scrollController1.offset + 200,
                     duration: Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
@@ -178,12 +214,12 @@ class MoviesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+            if (!Platform.isAndroid)
               IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_forward),
                 onPressed: () {
                   _scrollController1.animateTo(
-                    _scrollController1.offset - 200,
+                    _scrollController1.offset + 200,
                     duration: Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
@@ -248,12 +284,12 @@ class MoviesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+            if (!Platform.isAndroid)
               IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_forward),
                 onPressed: () {
                   _scrollController1.animateTo(
-                    _scrollController1.offset - 200,
+                    _scrollController1.offset + 200,
                     duration: Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );

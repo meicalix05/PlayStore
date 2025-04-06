@@ -5,12 +5,14 @@ class AppCard extends StatelessWidget {
   final double rating;
   final String image;
   final double height;
+  final Color backgroundColor;
 
   AppCard({
     required this.appName,
     required this.rating,
     required this.image,
     this.height = 220,
+    this.backgroundColor = Colors.white,
   });
 
   @override
@@ -22,6 +24,7 @@ class AppCard extends StatelessWidget {
           width: 120,
           height: height,
           child: Card(
+            color: backgroundColor,
             margin: EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

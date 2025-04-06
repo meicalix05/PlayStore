@@ -15,86 +15,43 @@ class GamesScreen extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              if (Platform.isAndroid)
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      _buildGameCard(
-                        context,
-                        'Minecraft',
-                        'Explora mundos infinitos y construye todo lo que imagines.',
-                        'assets/images/games_content/MINECRAFT_CARDBG.webp',
-                        'assets/images/games_content/minecraft.webp',
-                        4.8,
-                        '10M+',
-                        'Descargar',
-                      ),
-                      _buildGameCard(
-                        context,
-                        '8 Ball Pool',
-                        'El juego de billar más popular del mundo. ¡Compite en línea!',
-                        'assets/images/games_content/8BALLPOOL_CARDBG.webp',
-                        'assets/images/games_content/8BALLPOOL.png',
-                        4.7,
-                        '500M+',
-                        'Descargar',
-                      ),
-                      _buildGameCard(
-                        context,
-                        'Odin: Valhalla Rising',
-                        'Embárcate en una aventura épica en la mitología nórdica.',
-                        'assets/images/games_content/ODIN_CARDBG.webp',
-                        'assets/images/games_content/ODINVALHALLARISING.webp',
-                        4.6,
-                        '1M+',
-                        'Preregistrar',
-                      ),
-                    ],
-                  ),
-                )
-              else ...[
-                Expanded(
-                  child: _buildGameCard(
-                    context,
-                    'Minecraft',
-                    'Explora mundos infinitos y construye todo lo que imagines.',
-                    'assets/images/games_content/MINECRAFT_CARDBG.webp',
-                    'assets/images/games_content/minecraft.webp',
-                    4.8,
-                    '10M+',
-                    'Descargar',
-                  ),
+          child: Container(
+            height: 250,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                _buildGameCard(
+                  context,
+                  'Minecraft',
+                  'Explora mundos infinitos y construye todo lo que imagines.',
+                  'assets/images/games_content/MINECRAFT_CARDBG.webp',
+                  'assets/images/games_content/minecraft.webp',
+                  4.8,
+                  '10M+',
+                  'Descargar',
                 ),
-                Expanded(
-                  child: _buildGameCard(
-                    context,
-                    '8 Ball Pool',
-                    'El juego de billar más popular del mundo. ¡Compite en línea!',
-                    'assets/images/games_content/8BALLPOOL_CARDBG.webp',
-                    'assets/images/games_content/8BALLPOOL.png',
-                    4.7,
-                    '500M+',
-                    'Descargar',
-                  ),
+                _buildGameCard(
+                  context,
+                  '8 Ball Pool',
+                  'El juego de billar más popular del mundo. ¡Compite en línea!',
+                  'assets/images/games_content/8BALLPOOL_CARDBG.webp',
+                  'assets/images/games_content/8BALLPOOL.png',
+                  4.7,
+                  '500M+',
+                  'Descargar',
                 ),
-                Expanded(
-                  child: _buildGameCard(
-                    context,
-                    'Odin: Valhalla Rising',
-                    'Embárcate en una aventura épica en la mitología nórdica.',
-                    'assets/images/games_content/ODIN_CARDBG.webp',
-                    'assets/images/games_content/ODINVALHALLARISING.webp',
-                    4.6,
-                    '1M+',
-                    'Preregistrar',
-                  ),
+                _buildGameCard(
+                  context,
+                  'Odin: Valhalla Rising',
+                  'Embárcate en una aventura épica en la mitología nórdica.',
+                  'assets/images/games_content/ODIN_CARDBG.webp',
+                  'assets/images/games_content/ODINVALHALLARISING.webp',
+                  4.6,
+                  '1M+',
+                  'Preregistrar',
                 ),
               ],
-            ],
+            ),
           ),
         ),
         // Primera sección: Juegos recomendados para ti
@@ -434,12 +391,12 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+            if (!Platform.isAndroid)
               IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_forward),
                 onPressed: () {
                   _scrollController1.animateTo(
-                    _scrollController1.offset - 200,
+                    _scrollController1.offset + 200,
                     duration: Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
@@ -600,12 +557,12 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+            if (!Platform.isAndroid)
               IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_forward),
                 onPressed: () {
                   _scrollController1.animateTo(
-                    _scrollController1.offset - 200,
+                    _scrollController1.offset + 200,
                     duration: Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
@@ -791,12 +748,12 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
             ),
-            if (!Platform.isAndroid) // Mostrar botón solo si no es Android
+            if (!Platform.isAndroid)
               IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_forward),
                 onPressed: () {
                   _scrollController1.animateTo(
-                    _scrollController1.offset - 200,
+                    _scrollController1.offset + 200,
                     duration: Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
@@ -821,7 +778,7 @@ Widget _buildGameCard(
 ) {
   return Container(
     height: 250,
-    width: 350,
+    width: Platform.isAndroid ? MediaQuery.of(context).size.width * 0.9 : 400,
     margin: EdgeInsets.symmetric(horizontal: 4.0),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(12),
