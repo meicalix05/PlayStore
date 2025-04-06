@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_play_emulator/screens/login_screen.dart';
-import '../main.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
