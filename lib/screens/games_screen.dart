@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import '/widgets/app_card.dart';
 import 'app_details_screen.dart';
+import '/widgets/game_card.dart';
 
 class GamesScreen extends StatelessWidget {
   final ScrollController _scrollController1 = ScrollController();
@@ -20,35 +21,39 @@ class GamesScreen extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                _buildGameCard(
-                  context,
-                  'Minecraft',
-                  'Explora mundos infinitos y construye todo lo que imagines.',
-                  'assets/images/games_content/MINECRAFT_CARDBG.webp',
-                  'assets/images/games_content/minecraft.webp',
-                  4.8,
-                  '10M+',
-                  'Descargar',
+                GameCard(
+                  appName: 'Minecraft',
+                  description:
+                      'Explora mundos infinitos y construye todo lo que imagines.',
+                  backgroundImage:
+                      'assets/images/games_content/MINECRAFT_CARDBG.webp',
+                  logoImage: 'assets/images/games_content/minecraft.webp',
+                  rating: .8,
+                  downloads: '10M+',
+                  buttonText: 'Descargar',
                 ),
-                _buildGameCard(
-                  context,
-                  '8 Ball Pool',
-                  'El juego de billar más popular del mundo. ¡Compite en línea!',
-                  'assets/images/games_content/8BALLPOOL_CARDBG.webp',
-                  'assets/images/games_content/8BALLPOOL.png',
-                  4.7,
-                  '500M+',
-                  'Descargar',
+                GameCard(
+                  appName: '8 Ball Pool',
+                  description:
+                      'El juego de billar más popular del mundo. ¡Compite en línea!',
+                  backgroundImage:
+                      'assets/images/games_content/8BALLPOOL_CARDBG.webp',
+                  logoImage: 'assets/images/games_content/8BALLPOOL.png',
+                  rating: .7,
+                  downloads: '500M+',
+                  buttonText: 'Descargar',
                 ),
-                _buildGameCard(
-                  context,
-                  'Odin: Valhalla Rising',
-                  'Embárcate en una aventura épica en la mitología nórdica.',
-                  'assets/images/games_content/ODIN_CARDBG.webp',
-                  'assets/images/games_content/ODINVALHALLARISING.webp',
-                  4.6,
-                  '1M+',
-                  'Preregistrar',
+                GameCard(
+                  appName: 'Odin: Valhalla Rising',
+                  description:
+                      'Embárcate en una aventura épica en la mitología nórdica.',
+                  backgroundImage:
+                      'assets/images/games_content/ODIN_CARDBG.webp',
+                  logoImage:
+                      'assets/images/games_content/ODINVALHALLARISING.webp',
+                  rating: .6,
+                  downloads: '1M+',
+                  buttonText: 'Preregistrar',
                 ),
               ],
             ),
@@ -764,100 +769,4 @@ class GamesScreen extends StatelessWidget {
       ],
     );
   }
-}
-
-Widget _buildGameCard(
-  BuildContext context,
-  String appName,
-  String description,
-  String backgroundImage,
-  String logoImage,
-  double rating,
-  String downloads,
-  String buttonText,
-) {
-  return Container(
-    height: 250,
-    width: Platform.isAndroid ? MediaQuery.of(context).size.width * 0.9 : 400,
-    margin: EdgeInsets.symmetric(horizontal: 4.0),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(12),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.3),
-          blurRadius: 5,
-          offset: Offset(0, 3),
-        ),
-      ],
-      image: DecorationImage(
-        image: AssetImage(backgroundImage),
-        fit: BoxFit.cover,
-      ),
-    ),
-    child: Stack(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            gradient: LinearGradient(
-              colors: [Colors.black.withOpacity(0.9), Colors.transparent],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                description,
-                style: TextStyle(fontSize: 16, color: Colors.white),
-              ),
-              SizedBox(height: 8.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Image.asset(logoImage, width: 40, height: 40),
-                      SizedBox(width: 8.0),
-                      Text(
-                        appName,
-                        style: TextStyle(fontSize: 12, color: Colors.white),
-                      ),
-                    ],
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder:
-                              (context) => AppDetailsScreen(
-                                appName: appName,
-                                description: description,
-                                image: backgroundImage,
-                                rating: rating,
-                                downloads: downloads,
-                              ),
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blueGrey,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: Text(buttonText),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
 }

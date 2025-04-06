@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:google_play_emulator/screens/search_screen.dart';
+import 'package:google_play_emulator/screens/splash_screen.dart';
 import 'screens/apps_screen.dart';
 import 'screens/games_screen.dart';
 import 'screens/movies_screen.dart';
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: GooglePlayScreen(),
+      home: SplashScreen(),
     );
   }
 }
@@ -42,12 +44,13 @@ class _GooglePlayScreenState extends State<GooglePlayScreen> {
     MoviesScreen(),
     BooksScreen(),
     KidsScreen(),
+    SearchScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 6,
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -96,19 +99,25 @@ class _GooglePlayScreenState extends State<GooglePlayScreen> {
             ],
           ),
           actions: [
-            IconButton(
-              icon: Icon(_isSearching ? Icons.close : Icons.search),
-              onPressed: () {
-                setState(() {
-                  if (_isSearching) {
-                    _isSearching = false;
-                    _searchController.clear();
-                  } else {
-                    _isSearching = true;
-                  }
-                });
-              },
-            ),
+            !Platform.isAndroid
+                ? IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    setState(() {
+                      _isSearching = !_isSearching;
+                    });
+                    if (_isSearching) {
+                      _searchController.clear();
+                    }
+                  },
+                )
+                : Container(),
+            Platform.isAndroid
+                ? IconButton(icon: Icon(Icons.notifications), onPressed: () {})
+                : IconButton(
+                  icon: Icon(Icons.help_outline_rounded),
+                  onPressed: () {},
+                ),
             PopupMenuButton<String>(
               icon: Icon(Icons.account_circle),
               onSelected: (String value) {
@@ -177,6 +186,10 @@ class _GooglePlayScreenState extends State<GooglePlayScreen> {
                     BottomNavigationBarItem(
                       icon: Icon(Icons.child_care),
                       label: 'Niños',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.search),
+                      label: 'Buscar',
                     ),
                   ],
                 )

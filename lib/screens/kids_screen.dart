@@ -49,17 +49,7 @@ class KidsScreen extends StatelessWidget {
                         backgroundColor: Colors.white,
                       ),
                       child: Text(
-                        '0-2 años',
-                        style: TextStyle(color: Colors.green),
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                      ),
-                      child: Text(
-                        '3-5 años',
+                        'Hasta los 5 años',
                         style: TextStyle(color: Colors.green),
                       ),
                     ),

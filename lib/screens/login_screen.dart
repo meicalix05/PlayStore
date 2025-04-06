@@ -14,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
     String username = _usernameController.text;
     String password = _passwordController.text;
 
-    if (username == 'admin' && password == '12345') {
+    if (username == 'grupo2' && password == '12345') {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Se inició sesión correctamente.')),
       );
@@ -33,6 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: SingleChildScrollView(
           child: Column(
